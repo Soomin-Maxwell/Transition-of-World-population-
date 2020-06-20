@@ -16,7 +16,10 @@ You can see the results with GIF below
 
 - Colormap (Pydeck) : Color of polygon in each country changes according to the number of people by timeline. 
 
+(GIF is now preparing)
+
 - Colormap (Kepler) : Users can easily customize layer types, colors, and so on. 
+![colormap](https://user-images.githubusercontent.com/64841056/85198227-e0800380-b321-11ea-90af-6e2e69ddc379.gif)
 
 
 
