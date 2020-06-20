@@ -12,7 +12,7 @@ You can see the results with GIF below
 
 - Heatmap (Pydeck) : Intensity of heatmap changes depending on population by timeline
 
-![](heatmaplayer.gif)
+![heatmap](https://user-images.githubusercontent.com/64841056/85198195-a3b40c80-b321-11ea-9ee6-dd67a64e4ae8.gif)
 
 - Colormap (Pydeck) : Color of polygon in each country changes according to the number of people by timeline. 
 
