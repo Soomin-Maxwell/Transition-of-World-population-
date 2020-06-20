@@ -138,7 +138,7 @@ slider.observe(on_change)
 - python : ver. 3.6.9
 - pydeck : ver. 0.3.1
 - pandas : 1.0.1
-- geoopandas : 0.7.0
+- geopandas : 0.7.0
 - kepler.gl : 0.2.0
 
 
