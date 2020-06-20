@@ -12,6 +12,8 @@ You can see the results with GIF below
 
 - Heatmap (Pydeck) : Intensity of heatmap changes depending on population by timeline
 
+![](heatmaplayer.gif)
+
 - Colormap (Pydeck) : Color of polygon in each country changes according to the number of people by timeline. 
 
 - Colormap (Kepler) : Users can easily customize layer types, colors, and so on. 
