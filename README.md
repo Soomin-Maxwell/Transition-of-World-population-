@@ -32,7 +32,9 @@ This usage is for heatmap layer with pydeck
 - **0. Set Mapbox API** 
 
 You need to set MAPBOX API token in order to see the map. 
+
 Make an account and log-in to Mapbox homepage and get API access token.
+
 Add to environment variable like :
 
 ```
@@ -57,7 +59,7 @@ Add to environment variable like :
 
 - **3. Usable Format **
 
-CSV files are needed 
+CSV files are needed for this script.
 
 ## 3. Dependency 
 - macOS : Catalina 10.15.5
