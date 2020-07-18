@@ -29,7 +29,7 @@ You can see the results with GIF below
 This usage is for heatmap layer with pydeck
 
 
-- **0. Set Mapbox API ** : 
+- **0. Set Mapbox API** 
 
 You need to set MAPBOX API token in order to see the map. 
 Make an account and log-in to Mapbox homepage and get API access token.
@@ -40,7 +40,7 @@ Add to environment variable like :
 ```
 
 
-- **1.Executing Program **:
+- **1.Executing Program**
 
 ```
 
@@ -48,14 +48,15 @@ Add to environment variable like :
 
 
 
-- **2.Option description **:
+- **2.Option description**
 ```
 
 ```
 
 
 
-- **3. Usable Format **:
+- **3. Usable Format **
+
 CSV files are needed 
 
 ## 3. Dependency 
