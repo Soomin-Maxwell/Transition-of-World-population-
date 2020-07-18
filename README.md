@@ -28,7 +28,19 @@ You can see the results with GIF below
 
 This usage is for heatmap layer with pydeck
 
-- **0. Executing Program** :
+
+- **0. Set Mapbox API ** : 
+
+You need to set MAPBOX API token in order to see the map. 
+Make an account and log-in to Mapbox homepage and get API access token.
+Add to environment variable like :
+
+```
+ export MAPBOX_API_KEY="Your MapboxAPI token"
+```
+
+
+- **1.Executing Program **:
 
 ```
 
@@ -36,107 +48,15 @@ This usage is for heatmap layer with pydeck
 
 
 
-- **1. Import library** :
+- **2.Option description **:
+```
 
 ```
-import csv
-import pandas as pd
-import geopandas as gpd
-import pydeck as pdk
-```   
-    
-- **2. Add data** :
-
-```
-# Upload data of each countries' population.
-df1 = pd.read_csv("projected-population-by-country.csv")
-df1.head(10)
-
-# Upload data of each countries' latitude and longtitude. 
-df2 = "countries.csv"
-df2 = pd.read_csv(df2)
-df2.head(10)
-```  
-    
-- **3. Data Preprocessing** :
 
 
-```
-# Merge two datas.
-merged = df2.merge(df1, left_on = 'name', right_on = 'Entity', how = 'left')
-    
-# Get data before 2021
-merged = merged.loc[merged["Year"] < '2021', :] 
-    
-# change object -> value 
-merged['Year'] = merged['Year'].astype(int)
-merged['Population'] = merged['Population'].astype(int)
 
-# NAN -> string
-merged.fillna('No data', inplace = True)
-
-# Nomalize population
-merged['normal'] = merged['Population'] / merged['Population'].max()
-	
-# Delete column "country, entity, code"
-merged.drop(["country", 'Entity', 'Code'], axis='columns', inplace=True)
-```   
-   
-
-- **4. Render** :
-
-``` 
-initial_data = merged[merged['Year'] == 1800].to_dict(orient= 'records')
-
-# Set layers 
-layer = pdk.Layer(
-    	"HeatmapLayer",
-    	initial_data,
-    	opacity=0.8,
-    	get_position=["longitude", "latitude"],
-    	aggregation="ADD",
-    	get_weight="normal",
-    	auto_highlight=True,
-    	pickable=True,
-    	get_radius=200)
-
-center = [1.6015540000000001, 42.546245] 
-view_state = pdk.ViewState( longitude=center[0], latitude=center[1], zoom=1) # Render 
-r = pdk.Deck(
-	 layers=[layer], 
-	 initial_view_state = view_state ,
-	 views=[pdk.View(type='MapView', controller=None)],
- 	 tooltip={
- 	    'html': '<b>Nation:</b> {name}',
- 	    'style': {
-  	  'color': 'white'
-  	      }
-  	  }
-	)
-``` 
-
-
-- **5. Add slider** :
-
-``` 
-# Make widgets 
-import ipywidgets as widgets
-from IPython.display import display
-slider = widgets.IntSlider(1800, min=1800, max=2020, step=2)
-
-# Define functions for slider 
-def on_change(v):
-  results = merged[merged['Year'] == slider.value].to_dict(orient='records')
-  layer.data = results
- 	r.update()
-    
-# Connect deck with slider 
-display(slider)
-slider.observe(on_change)
-``` 
-	
-
-
+- **3. Usable Format **:
+CSV files are needed 
 
 ## 3. Dependency 
 - macOS : Catalina 10.15.5
